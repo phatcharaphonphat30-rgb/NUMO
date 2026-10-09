@@ -1,1 +1,101 @@
-<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NUMO</title><link rel="stylesheet" href="style.css"></head><body><header><div class="logo">NUMO</div><button onclick="openLogin()">เข้าสู่ระบบ</button></header><main><section class="hero"><div><small>NUMO DATA & CALCULATION</small><h1>มีข้อมูลให้เรา<br><span>เราช่วยคำนวณให้คุณ</span></h1><p>รับสร้างโปรแกรมคำนวณและจัดการข้อมูลตามความต้องการ</p></div><div class="dashboard"><h3>NUMO Dashboard</h3><p>ยอดขาย　45,000 ฿</p><p>ต้นทุน　30,000 ฿</p><strong>กำไร　15,000 ฿</strong></div></section><section><small>SERVICES</small><h2>บริการของ NUMO</h2><div class="cards"><article>📊<h3>คำนวณ</h3><p>กำไร ขาดทุน ต้นทุน และสูตรเฉพาะงาน</p></article><article>📁<h3>จัดการข้อมูล</h3><p>จัดระเบียบและสรุปข้อมูล</p></article><article>⚙️<h3>เครื่องมือเฉพาะ</h3><p>สร้างเครื่องมือให้เหมาะกับลูกค้า</p></article></div></section><section><small>DEMO TOOL</small><h2>คำนวณกำไร/ขาดทุน</h2><div id="products"></div><button onclick="addProduct()">+ เพิ่มสินค้า</button><button onclick="calculate()">คำนวณ</button><div id="result"></div></section></main><footer>© 2026 NUMO</footer><div id="loginModal" class="modal"><div class="box"><button class="close" onclick="closeLogin()">×</button><h2>เข้าสู่ระบบ</h2><input id="username" placeholder="ชื่อผู้ใช้"><input id="password" type="password" placeholder="รหัสผ่าน"><button onclick="login()">เข้าสู่ระบบ</button><p id="error"></p></div></div><script src="script.js"></script></body></html>
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d18">
+  <title>NUMO | จัดการข้อมูลให้เป็นเรื่องง่าย</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="./">NUMO</a>
+    <a class="login-button" href="#login">เข้าสู่ระบบ</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">NUMO DATA & CALCULATION</p>
+
+      <h1>
+        จัดการข้อมูล<br>
+        ให้เป็นเรื่องง่าย
+      </h1>
+
+      <p class="intro">
+        NUMO ถูกสร้างขึ้นเพื่อช่วยให้การคำนวณ
+        และการจัดการข้อมูลเป็นเรื่องง่าย เป็นระบบ
+        และลดความยุ่งยากในการทำงาน
+      </p>
+
+      <a class="primary-button" href="#login">
+        เริ่มต้นใช้งาน
+      </a>
+    </section>
+
+    <section class="about">
+      <h2>NUMO ช่วยอะไรคุณได้บ้าง?</h2>
+
+      <article class="info-card">
+        <div class="icon">🧮</div>
+        <h3>คำนวณอย่างเป็นระบบ</h3>
+        <p>
+          ใช้เครื่องมือคำนวณเพื่อช่วยประมวลผลข้อมูล
+          และลดความผิดพลาดจากการคำนวณด้วยตนเอง
+        </p>
+      </article>
+
+      <article class="info-card">
+        <div class="icon">📁</div>
+        <h3>จัดการข้อมูลได้ง่ายขึ้น</h3>
+        <p>
+          ช่วยจัดระเบียบข้อมูลให้อ่านง่าย
+          และสะดวกต่อการนำไปใช้งาน
+        </p>
+      </article>
+
+      <article class="info-card">
+        <div class="icon">🔐</div>
+        <h3>เข้าใช้ด้วยบัญชีของคุณ</h3>
+        <p>
+          เครื่องมือสำหรับสมาชิกจะอยู่ในพื้นที่ใช้งาน
+          หลังจากเข้าสู่ระบบด้วยบัญชีที่ได้รับอนุญาต
+        </p>
+      </article>
+    </section>
+
+    <section class="how-to">
+      <h2>เริ่มใช้งาน NUMO อย่างไร?</h2>
+      <ol>
+        <li>รับบัญชีเข้าใช้งานจากผู้ดูแลระบบ</li>
+        <li>เข้าสู่ระบบด้วยข้อมูลบัญชีของคุณ</li>
+        <li>เลือกเครื่องมือที่ต้องการใช้งาน</li>
+        <li>กรอกข้อมูลและตรวจสอบผลลัพธ์</li>
+      </ol>
+    </section>
+
+    <section class="login-section" id="login">
+      <h2>พร้อมเริ่มต้นใช้งานหรือยัง?</h2>
+      <p>
+        พื้นที่สมาชิกและเครื่องมือคำนวณ
+        จะเปิดให้ใช้งานเมื่อระบบบัญชีพร้อม
+      </p>
+      <a class="primary-button" href="#login">
+        เข้าสู่ระบบ
+      </a>
+      <p class="notice">
+        ขณะนี้ระบบสมาชิกกำลังอยู่ระหว่างการพัฒนา
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="./">NUMO</a>
+    <p>ทำให้การคำนวณและจัดการข้อมูลง่ายขึ้น</p>
+    <small>© 2026 NUMO. All rights reserved.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
